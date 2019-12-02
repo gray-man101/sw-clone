@@ -1,0 +1,20 @@
+type Ln {
+	id: ID!
+	dbName: String
+	status: String
+	amount: BigDecimal
+}
+
+type Query {
+    ls: [Ln]!
+}
+
+type Mutation {
+    createLn(newLn: NewLnDTO!): Ln!
+}
+
+input NewLnDTO {
+    dbName: String!
+    status: String!
+    amount: BigDecimal
+}
