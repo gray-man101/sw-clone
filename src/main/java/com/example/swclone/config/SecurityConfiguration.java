@@ -20,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
-                .and().formLogin()
+                .and().formLogin().successHandler((request, response, authentication) -> response.setStatus(200))
                 .and()
                 .csrf().disable();
 
