@@ -18,6 +18,7 @@ public class LnMutationResolver implements GraphQLMutationResolver {
         ln.setDbName(newLnDTO.getDbName());
         ln.setAmount(newLnDTO.getAmount());
         ln.setDbName(newLnDTO.getDbName());
+        ln.setStatus(newLnDTO.getStatus());
         lnRepository.save(ln);
         return ln;
     }

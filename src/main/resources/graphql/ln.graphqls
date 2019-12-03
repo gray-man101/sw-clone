@@ -5,12 +5,9 @@ type Ln {
 	amount: BigDecimal
 }
 
-type Query {
-    ls: [Ln]!
-}
-
 type Mutation {
     createLn(newLn: NewLnDTO!): Ln!
+    createPm(newPm: NewPmDTO!): Pm!
 }
 
 input NewLnDTO {

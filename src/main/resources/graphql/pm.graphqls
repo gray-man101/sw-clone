@@ -1,0 +1,15 @@
+type Pm {
+	id: ID!
+	amount: BigDecimal
+	ln: Ln
+}
+
+type Query {
+    pms: [Pm]!
+    ls: [Ln]!
+}
+
+input NewPmDTO {
+    lnId: Long!
+    amount: BigDecimal!
+}
