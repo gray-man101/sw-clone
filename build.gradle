@@ -22,6 +22,8 @@ dependencies {
 	compile 'org.projectlombok:lombok:1.18.10'
 	compile 'commons-collections:commons-collections:3.2.2'
 	runtime 'com.h2database:h2'
+	
+	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
