@@ -18,6 +18,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         http
                 .httpBasic().disable()
+                .cors().and()
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .and().formLogin().successHandler((request, response, authentication) -> response.setStatus(200))
