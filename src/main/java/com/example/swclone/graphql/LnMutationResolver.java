@@ -6,8 +6,10 @@ import com.example.swclone.entity.Ln;
 import com.example.swclone.repository.LnRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
+@Transactional
 public class LnMutationResolver implements GraphQLMutationResolver {
 
     @Autowired
@@ -21,6 +23,12 @@ public class LnMutationResolver implements GraphQLMutationResolver {
         ln.setStatus(newLnDTO.getStatus());
         lnRepository.save(ln);
         return ln;
+    }
+
+    public Ln updateLn(Long id, String status) {
+        Ln ln = lnRepository.getOne(id);
+        ln.setStatus(status);
+        return lnRepository.save(ln);
     }
 
 }

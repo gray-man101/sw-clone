@@ -7,6 +7,7 @@ type Ln {
 
 type Mutation {
     createLn(newLn: NewLnDTO!): Ln!
+    updateLn(id: ID!, status: String!): Ln!
     createPm(newPm: NewPmDTO!): Pm!
 }
 
